@@ -270,13 +270,18 @@
 }
 
   var url=getQueryString("url");//获取code值
+  var i=getQueryString("index");//获取code值
   if(url!=null){
   var jkurl = document.getElementById("jk");
-	var jk = document.getElementById("jk").selectedIndex;
+ 
+    if(i!=null){
+	   jk=i;
+	   jkurl.options[i].selected = 'selected';
+	}
+     var jk = document.getElementById("jk").selectedIndex;
 	var jkv = jkurl.options[jk].value;
 	var cljurl = document.getElementById("player");
 	cljurl.src = jkv + url;
-	
 	document.getElementById("url").value=url;
   }
 </script>  
